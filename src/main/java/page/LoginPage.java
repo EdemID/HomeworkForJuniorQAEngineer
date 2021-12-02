@@ -9,9 +9,9 @@ import static utils.AllureRuntime.captureScreenshot;
 
 public class LoginPage {
 
-    SelenideElement loginElememt = $x("//input[@placeholder='Введите ваш логин']");
-    SelenideElement passwordElement = $x("//input[@placeholder='Введите ваш пароль']");
-    SelenideElement buttonLoginElement = $x("//button[text()='Войти']");
+    private SelenideElement loginElememt = $x("//input[@placeholder='Введите ваш логин']");
+    private SelenideElement passwordElement = $x("//input[@placeholder='Введите ваш пароль']");
+    private SelenideElement buttonLoginElement = $x("//button[text()='Войти']");
 
     @Step("Входит под пользователем: {username} с паролем {password}")
     public MainMirapolisPage login(String username, String password) {
