@@ -16,39 +16,20 @@ public class Data {
         );
     }
 
-    public static Stream<Arguments> loginTestWithLogin() {
-        return Stream.of(
-                Arguments.of(props.login(), Utilities.generatesRandomString())
-        );
-    }
-
-    public static Stream<Arguments> loginTestWithPassword() {
-        return Stream.of(
-                Arguments.of(Utilities.generatesRandomString(), props.password())
-        );
-    }
-
     public static Stream<Arguments> loginTestWithIncorrectData() {
         return Stream.of(
-                Arguments.of(Utilities.generatesRandomString(), Utilities.generatesRandomString())
+                Arguments.of(props.login(), Utilities.generatesRandomString(), "Неверные данные для авторизации"),
+                Arguments.of(Utilities.generatesRandomString(), props.password(), "Неверные данные для авторизации"),
+                Arguments.of(Utilities.generatesRandomString(), Utilities.generatesRandomString(), "Неверные данные для авторизации"),
+                Arguments.of("", "", "Неверные данные для авторизации."),
+                Arguments.of(props.login(), "", "Неверные данные для авторизации."),
+                Arguments.of("", props.password(), "Неверные данные для авторизации.")
         );
     }
 
-    public static Stream<Arguments> loginTestWithoutLoginAndPassword() {
+    public static Stream<Arguments> showPassword() {
         return Stream.of(
-                Arguments.of("", "")
-        );
-    }
-
-    public static Stream<Arguments> loginTestWithLoginAndWithoutPassword() {
-        return Stream.of(
-                Arguments.of(props.login(), "")
-        );
-    }
-
-    public static Stream<Arguments> loginTestWithPasswordAndWithoutLogin() {
-        return Stream.of(
-                Arguments.of("", props.password())
+                Arguments.of(props.password())
         );
     }
 }

@@ -10,6 +10,7 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 public class BaseTest {
+
     private static final Logger LOG = LoggerFactory.getLogger(BaseTest.class);
     static Properties props = ConfigFactory.create(Properties.class);
     private static DesiredCapabilities capabilities = new DesiredCapabilities();

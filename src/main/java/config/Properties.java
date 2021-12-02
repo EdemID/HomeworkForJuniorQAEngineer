@@ -9,6 +9,7 @@ import org.aeonbits.owner.Reloadable;
         "file:src/test/resources/tests.properties"
 })
 public interface Properties extends Reloadable {
+
     @Key("mirapolis.url")
     String mirapolisurl();
 
